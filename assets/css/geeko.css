@@ -1,0 +1,88 @@
+/* line 1, ../sass/_main.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../sass/_main.scss */
+.container {
+  background: #555f82;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #555f82 0%, #444f6f 23%, #424d6b 24%, #3a4362 35%, #39425f 36%, #394261 36%, #2a344f 55%, #252f4a 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #555f82 0%, #444f6f 23%, #424d6b 24%, #3a4362 35%, #39425f 36%, #394261 36%, #2a344f 55%, #252f4a 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #555f82 0%, #444f6f 23%, #424d6b 24%, #3a4362 35%, #39425f 36%, #394261 36%, #2a344f 55%, #252f4a 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555f82', endColorstr='#252f4a',GradientType=0 );
+  width: calc(100vw - 8vw);
+  height: calc(100vh - 4vh);
+  padding: 2vh 4vw;
+}
+
+/* line 1, ../sass/_header.scss */
+#menu {
+  height: 10vh;
+  width: calc(100% - 4vw);
+}
+/* line 4, ../sass/_header.scss */
+#menu .burger {
+  height: 50%;
+  width: 13vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 86px;
+}
+/* line 12, ../sass/_header.scss */
+#menu .burger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #62D4DF;
+  position: relative;
+}
+/* line 17, ../sass/_header.scss */
+#menu .burger .bar:before {
+  content: '';
+  position: absolute;
+  top: 300%;
+  width: 50%;
+  height: 3px;
+  background-color: #62D4DF;
+}
+/* line 25, ../sass/_header.scss */
+#menu .burger .bar:after {
+  content: '';
+  position: absolute;
+  top: 600%;
+  width: 25%;
+  height: 3px;
+  background-color: #62D4DF;
+}
+/* line 36, ../sass/_header.scss */
+#menu .burger:hover .bar:before, #menu .burger:hover .bar:after {
+  width: 100%;
+}
+/* line 44, ../sass/_header.scss */
+#menu nav {
+  display: none;
+  height: 100vh;
+}
+/* line 47, ../sass/_header.scss */
+#menu nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+/* line 54, ../sass/_header.scss */
+#menu nav ul li:not(:last-child) {
+  margin-bottom: 30px;
+}
+/* line 57, ../sass/_header.scss */
+#menu nav ul li a {
+  text-decoration: none;
+  color: white;
+}
