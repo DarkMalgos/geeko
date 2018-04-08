@@ -2,9 +2,16 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
 }
 
-/* line 6, ../sass/_main.scss */
+/* line 8, ../sass/_main.scss */
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+/* line 12, ../sass/_main.scss */
 .container {
   background: #555f82;
   /* Old browsers */
@@ -18,14 +25,18 @@
   width: calc(100vw - 8vw);
   height: calc(100vh - 4vh);
   padding: 2vh 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* line 1, ../sass/_header.scss */
 #menu {
   height: 10vh;
   width: calc(100% - 4vw);
+  position: relative;
 }
-/* line 4, ../sass/_header.scss */
+/* line 5, ../sass/_header.scss */
 #menu .burger {
   height: 50%;
   width: 13vw;
@@ -34,15 +45,23 @@
   justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 86px;
+  /*&:hover {
+    .bar {
+      &:before,
+      &:after {
+        width: 100%;
+      }
+    }
+  }*/
 }
-/* line 12, ../sass/_header.scss */
+/* line 13, ../sass/_header.scss */
 #menu .burger .bar {
   width: 100%;
   height: 3px;
   background-color: #62D4DF;
   position: relative;
 }
-/* line 17, ../sass/_header.scss */
+/* line 18, ../sass/_header.scss */
 #menu .burger .bar:before {
   content: '';
   position: absolute;
@@ -51,7 +70,7 @@
   height: 3px;
   background-color: #62D4DF;
 }
-/* line 25, ../sass/_header.scss */
+/* line 26, ../sass/_header.scss */
 #menu .burger .bar:after {
   content: '';
   position: absolute;
@@ -60,16 +79,42 @@
   height: 3px;
   background-color: #62D4DF;
 }
-/* line 36, ../sass/_header.scss */
-#menu .burger:hover .bar:before, #menu .burger:hover .bar:after {
-  width: 100%;
+/* line 35, ../sass/_header.scss */
+#menu .burger .active {
+  visibility: hidden;
 }
-/* line 44, ../sass/_header.scss */
-#menu nav {
-  display: none;
-  height: 100vh;
+/* line 37, ../sass/_header.scss */
+#menu .burger .active:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #62D4DF;
+  transform: rotate(45deg);
+  visibility: visible;
+  top: 0;
 }
 /* line 47, ../sass/_header.scss */
+#menu .burger .active:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #62D4DF;
+  transform: rotate(-45deg);
+  visibility: visible;
+  top: 0;
+}
+/* line 68, ../sass/_header.scss */
+#menu nav {
+  display: none;
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+}
+/* line 75, ../sass/_header.scss */
 #menu nav ul {
   height: 100%;
   display: flex;
@@ -77,12 +122,67 @@
   align-items: center;
   list-style: none;
 }
-/* line 54, ../sass/_header.scss */
+/* line 82, ../sass/_header.scss */
 #menu nav ul li:not(:last-child) {
   margin-bottom: 30px;
 }
-/* line 57, ../sass/_header.scss */
+/* line 85, ../sass/_header.scss */
 #menu nav ul li a {
   text-decoration: none;
   color: white;
+}
+
+/*.show {
+  height: 100vh;
+  background: rgb(85,95,130);
+  background: -moz-linear-gradient(top, rgba(85,95,130,1) 0%, rgba(68,79,111,1) 23%, rgba(66,77,107,1) 24%, rgba(58,67,98,1) 35%, rgba(57,66,95,1) 36%, rgba(57,66,97,1) 36%, rgba(42,52,79,1) 55%, rgba(37,47,74,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(85,95,130,1) 0%,rgba(68,79,111,1) 23%,rgba(66,77,107,1) 24%,rgba(58,67,98,1) 35%,rgba(57,66,95,1) 36%,rgba(57,66,97,1) 36%,rgba(42,52,79,1) 55%,rgba(37,47,74,1) 100%);
+  background: linear-gradient(to bottom, rgba(85,95,130,1) 0%,rgba(68,79,111,1) 23%,rgba(66,77,107,1) 24%,rgba(58,67,98,1) 35%,rgba(57,66,95,1) 36%,rgba(57,66,97,1) 36%,rgba(42,52,79,1) 55%,rgba(37,47,74,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555f82', endColorstr='#252f4a',GradientType=0 );
+}*/
+/* line 1, ../sass/_index.scss */
+#index {
+  width: 100%;
+  height: 90%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* line 9, ../sass/_index.scss */
+#index .firstLabel {
+  border-right: .1em solid white;
+  margin: 2em 1em;
+  font-size: 20px;
+  width: 168.104px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 3s steps(21, end), blink-caret 0.5s step-end infinite alternate;
+  color: white;
+}
+/* line 20, ../sass/_index.scss */
+#index .small {
+  color: #62D4DF;
+  -webkit-animation: none;
+  font-size: 15px;
+}
+/* line 25, ../sass/_index.scss */
+#index input {
+  display: none;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  border-bottom: solid 2px #62D4DF;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
 }

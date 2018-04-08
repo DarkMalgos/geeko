@@ -1,0 +1,35 @@
+#index {
+  width: 100%;
+  height: 90%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .firstLabel {
+    border-right: .1em solid white;
+    margin: 2em 1em;
+    font-size: 20px;
+    width: 168.104px;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 3s steps(21, end),
+    blink-caret .5s step-end infinite alternate;
+    color: white;
+  }
+  .small {
+    color: #62D4DF;
+    -webkit-animation: none;
+    font-size: 15px;
+  }
+  input {
+    display: none;
+    background: transparent;
+    font-size: 20px;
+    color: white;
+    border-bottom: solid 2px #62D4DF;
+  }
+}
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
