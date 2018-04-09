@@ -32,5 +32,25 @@ app.get('/', function (req, res) {
     res.render('index.twig')
 })
 
+app.get('/inscription', function (req, res) {
+    res.render('inscription.twig')
+})
+
+app.get('/connexion', function (req, res) {
+    res.render('connexion.twig')
+})
+
+app.get('/profil', function (req, res) {
+    res.render('profil.twig')
+})
+
+app.get('/validate', function (req, res) {
+    res.render('validate.twig')
+})
+
+app.get('/add', function (req, res) {
+    res.render('add.twig')
+})
+
 server.listen(port);
 console.log("application live on port " + port);
