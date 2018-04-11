@@ -1,0 +1,14 @@
+#connexion {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 90vh;
+  width: 100%;
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
