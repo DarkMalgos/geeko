@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 
 /* line 12, ../sass/_main.scss */
 body {
-  background: #555f82;
+  background: #555f82 no-repeat;
   /* Old browsers */
   background: -moz-linear-gradient(top, #555f82 0%, #444f6f 23%, #424d6b 24%, #3a4362 35%, #39425f 36%, #394261 36%, #2a344f 55%, #252f4a 100%);
   /* FF3.6-15 */
@@ -22,18 +22,17 @@ body {
   background: linear-gradient(to bottom, #555f82 0%, #444f6f 23%, #424d6b 24%, #3a4362 35%, #39425f 36%, #394261 36%, #2a344f 55%, #252f4a 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555f82', endColorstr='#252f4a',GradientType=0 );
+  background-repeat: no-repeat;
 }
 
-/* line 20, ../sass/_main.scss */
+/* line 21, ../sass/_main.scss */
 .container {
   width: 80vw;
   margin: 0 auto;
-  height: calc(100vh - 20px);
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 /* line 1, ../sass/_header.scss */
@@ -141,7 +140,7 @@ body {
 /* line 1, ../sass/_index.scss */
 #index {
   width: 100%;
-  height: 90%;
+  height: 100vh;
   margin-top: 10%;
   display: flex;
   flex-direction: column;
@@ -189,14 +188,435 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   height: 90vh;
   width: 100%;
 }
-/* line 7, ../sass/_connexion.scss */
+/* line 8, ../sass/_connexion.scss */
 #connexion header {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 40px;
+}
+/* line 14, ../sass/_connexion.scss */
+#connexion header a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+/* line 18, ../sass/_connexion.scss */
+#connexion header a:first-child {
+  border-bottom: 1px solid #62D4DF;
+}
+/* line 21, ../sass/_connexion.scss */
+#connexion header a:not(:first-child) {
+  opacity: .5;
+}
+/* line 26, ../sass/_connexion.scss */
+#connexion form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 32, ../sass/_connexion.scss */
+#connexion form .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+/* line 35, ../sass/_connexion.scss */
+#connexion form .group input {
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: none;
+}
+/* line 44, ../sass/_connexion.scss */
+#connexion form .group input:focus {
+  outline: none;
+  border: none;
+}
+/* line 49, ../sass/_connexion.scss */
+#connexion form .group label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 61, ../sass/_connexion.scss */
+#connexion form .group input:focus ~ label, #connexion form .group input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #62D4DF;
+}
+/* line 66, ../sass/_connexion.scss */
+#connexion form .group .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 67, ../sass/_connexion.scss */
+#connexion form .group .bar:before, #connexion form .group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #62D4DF;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 78, ../sass/_connexion.scss */
+#connexion form .group .bar:before {
+  left: 50%;
+}
+/* line 81, ../sass/_connexion.scss */
+#connexion form .group .bar:after {
+  right: 50%;
+}
+/* line 84, ../sass/_connexion.scss */
+#connexion form .group input:focus ~ .bar:before, #connexion form .group input:focus ~ .bar:after {
+  width: 50%;
+}
+/* line 88, ../sass/_connexion.scss */
+#connexion form .group input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+/* line 94, ../sass/_connexion.scss */
+#connexion form button {
+  border: none;
+  background-color: #62D4DF;
+  border-radius: 5px;
+}
+/* line 98, ../sass/_connexion.scss */
+#connexion form button img {
+  padding: 5px 10px 0 10px;
+}
+/* line 104, ../sass/_connexion.scss */
+#connexion .small-link {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/* line 1, ../sass/_inscription.scss */
+#inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+/* line 8, ../sass/_inscription.scss */
+#inscription header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+/* line 14, ../sass/_inscription.scss */
+#inscription header a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+/* line 18, ../sass/_inscription.scss */
+#inscription header a:last-child {
+  border-bottom: 1px solid #62D4DF;
+}
+/* line 21, ../sass/_inscription.scss */
+#inscription header a:not(:last-child) {
+  opacity: .5;
+}
+/* line 26, ../sass/_inscription.scss */
+#inscription form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 32, ../sass/_inscription.scss */
+#inscription form .parent-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 36, ../sass/_inscription.scss */
+#inscription form .parent-group .group3 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 41, ../sass/_inscription.scss */
+#inscription form .parent-group .group3 input[type='file'] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+/* line 49, ../sass/_inscription.scss */
+#inscription form .parent-group .group3 label {
+  background-color: #62D4DF;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}
+/* line 55, ../sass/_inscription.scss */
+#inscription form .parent-group .group3 input[type='file'] + label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
+/* line 58, ../sass/_inscription.scss */
+#inscription form .parent-group .group3 p {
+  font-size: 12px;
+  color: #62D4DF;
+}
+/* line 63, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 {
+  width: 40%;
+  position: relative;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 70, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 input {
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: none;
+}
+/* line 79, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 input:focus {
+  outline: none;
+  border: none;
+}
+/* line 84, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 96, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 input:focus ~ label, #inscription form .parent-group .group2 input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #62D4DF;
+}
+/* line 101, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 102, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 .bar:before, #inscription form .parent-group .group2 .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #62D4DF;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 113, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 .bar:before {
+  left: 50%;
+}
+/* line 116, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 .bar:after {
+  right: 50%;
+}
+/* line 119, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 input:focus ~ .bar:before, #inscription form .parent-group .group2 input:focus ~ .bar:after {
+  width: 20%;
+}
+/* line 123, ../sass/_inscription.scss */
+#inscription form .parent-group .group2 input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+/* line 130, ../sass/_inscription.scss */
+#inscription form .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+/* line 133, ../sass/_inscription.scss */
+#inscription form .group input {
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: none;
+}
+/* line 142, ../sass/_inscription.scss */
+#inscription form .group input:focus {
+  outline: none;
+  border: none;
+}
+/* line 147, ../sass/_inscription.scss */
+#inscription form .group label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 159, ../sass/_inscription.scss */
+#inscription form .group input:focus ~ label, #inscription form .group input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #62D4DF;
+}
+/* line 164, ../sass/_inscription.scss */
+#inscription form .group .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 165, ../sass/_inscription.scss */
+#inscription form .group .bar:before, #inscription form .group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #62D4DF;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 176, ../sass/_inscription.scss */
+#inscription form .group .bar:before {
+  left: 50%;
+}
+/* line 179, ../sass/_inscription.scss */
+#inscription form .group .bar:after {
+  right: 50%;
+}
+/* line 182, ../sass/_inscription.scss */
+#inscription form .group input:focus ~ .bar:before, #inscription form .group input:focus ~ .bar:after {
+  width: 50%;
+}
+/* line 186, ../sass/_inscription.scss */
+#inscription form .group input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+/* line 192, ../sass/_inscription.scss */
+#inscription form button {
+  border: none;
+  background-color: #62D4DF;
+  border-radius: 5px;
+}
+/* line 196, ../sass/_inscription.scss */
+#inscription form button img {
+  padding: 5px 10px 0 10px;
+}
+/* line 202, ../sass/_inscription.scss */
+#inscription .small-link {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }

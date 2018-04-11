@@ -1,0 +1,55 @@
+{% extends 'layout.twig' %}
+{% block header %}
+    {% include 'header.twig' %}
+{% endblock %}
+
+{% block body %}
+    <section id="inscription">
+        <header>
+            <a href="/connexion">Connexion</a>
+            <a href="#">Inscription</a>
+        </header>
+        <form action="">
+            <div class="parent-group">
+                <div class="group2">
+                    <input type="text" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Nom</label>
+                </div>
+                <div class="group2">
+                    <input type="text" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Prénom</label>
+                </div>
+            </div>
+            <div class="parent-group">
+                <div class="group2">
+                    <input type="text" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Pseudo</label>
+                </div>
+                <div class="group3">
+                    <input type="file" name="file" id="file" class="inputfile" />
+                    <label for="file"></label>
+                    <p>choisi ta photo de profil</p>
+                </div>
+            </div>
+            <div class="group">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="group">
+                <input type="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Mot de passe</label>
+            </div>
+            <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
+        </form>
+    </section>
+{% endblock %}
