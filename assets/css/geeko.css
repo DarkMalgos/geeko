@@ -48,7 +48,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  margin-bottom: 86px;
+  margin-bottom: 40px;
   /*&:hover {
     .bar {
       &:before,
