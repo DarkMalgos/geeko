@@ -349,8 +349,9 @@ body {
   align-items: flex-start;
   width: 100%;
   margin-bottom: 20px;
+  height: 100vh;
 }
-/* line 8, ../sass/_inscription.scss */
+/* line 9, ../sass/_inscription.scss */
 #inscription header {
   width: 100%;
   display: flex;
@@ -358,21 +359,21 @@ body {
   align-items: center;
   margin-bottom: 40px;
 }
-/* line 14, ../sass/_inscription.scss */
+/* line 15, ../sass/_inscription.scss */
 #inscription header a {
   font-size: 20px;
   text-decoration: none;
   color: white;
 }
-/* line 18, ../sass/_inscription.scss */
+/* line 19, ../sass/_inscription.scss */
 #inscription header a:last-child {
   border-bottom: 1px solid #62D4DF;
 }
-/* line 21, ../sass/_inscription.scss */
+/* line 22, ../sass/_inscription.scss */
 #inscription header a:not(:last-child) {
   opacity: .5;
 }
-/* line 26, ../sass/_inscription.scss */
+/* line 27, ../sass/_inscription.scss */
 #inscription form {
   width: 100%;
   display: flex;
@@ -380,20 +381,20 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-/* line 32, ../sass/_inscription.scss */
+/* line 33, ../sass/_inscription.scss */
 #inscription form .parent-group {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-/* line 36, ../sass/_inscription.scss */
+/* line 37, ../sass/_inscription.scss */
 #inscription form .parent-group .group3 {
   width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 41, ../sass/_inscription.scss */
+/* line 42, ../sass/_inscription.scss */
 #inscription form .parent-group .group3 input[type='file'] {
   width: 0.1px;
   height: 0.1px;
@@ -402,24 +403,24 @@ body {
   position: absolute;
   z-index: -1;
 }
-/* line 49, ../sass/_inscription.scss */
+/* line 50, ../sass/_inscription.scss */
 #inscription form .parent-group .group3 label {
   background-color: #62D4DF;
   width: 100%;
   height: 50px;
   border-radius: 5px;
 }
-/* line 55, ../sass/_inscription.scss */
+/* line 56, ../sass/_inscription.scss */
 #inscription form .parent-group .group3 input[type='file'] + label {
   cursor: pointer;
   /* "hand" cursor */
 }
-/* line 58, ../sass/_inscription.scss */
+/* line 59, ../sass/_inscription.scss */
 #inscription form .parent-group .group3 p {
   font-size: 12px;
   color: #62D4DF;
 }
-/* line 63, ../sass/_inscription.scss */
+/* line 64, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 {
   width: 40%;
   position: relative;
@@ -428,7 +429,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-/* line 70, ../sass/_inscription.scss */
+/* line 71, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 input {
   color: white;
   font-size: 18px;
@@ -439,12 +440,12 @@ body {
   border-bottom: 1px solid #ffffff;
   background: none;
 }
-/* line 79, ../sass/_inscription.scss */
+/* line 80, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 input:focus {
   outline: none;
   border: none;
 }
-/* line 84, ../sass/_inscription.scss */
+/* line 85, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 label {
   color: #ffffff;
   font-size: 18px;
@@ -457,19 +458,19 @@ body {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 96, ../sass/_inscription.scss */
+/* line 97, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 input:focus ~ label, #inscription form .parent-group .group2 input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #62D4DF;
 }
-/* line 101, ../sass/_inscription.scss */
+/* line 102, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 102, ../sass/_inscription.scss */
+/* line 103, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 .bar:before, #inscription form .parent-group .group2 .bar:after {
   content: '';
   height: 2px;
@@ -481,30 +482,30 @@ body {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 113, ../sass/_inscription.scss */
+/* line 114, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 .bar:before {
   left: 50%;
 }
-/* line 116, ../sass/_inscription.scss */
+/* line 117, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 .bar:after {
   right: 50%;
 }
-/* line 119, ../sass/_inscription.scss */
+/* line 120, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 input:focus ~ .bar:before, #inscription form .parent-group .group2 input:focus ~ .bar:after {
   width: 20%;
 }
-/* line 123, ../sass/_inscription.scss */
+/* line 124, ../sass/_inscription.scss */
 #inscription form .parent-group .group2 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-/* line 130, ../sass/_inscription.scss */
+/* line 131, ../sass/_inscription.scss */
 #inscription form .group {
   position: relative;
   margin-bottom: 45px;
 }
-/* line 133, ../sass/_inscription.scss */
+/* line 134, ../sass/_inscription.scss */
 #inscription form .group input {
   color: white;
   font-size: 18px;
@@ -515,12 +516,12 @@ body {
   border-bottom: 1px solid #ffffff;
   background: none;
 }
-/* line 142, ../sass/_inscription.scss */
+/* line 143, ../sass/_inscription.scss */
 #inscription form .group input:focus {
   outline: none;
   border: none;
 }
-/* line 147, ../sass/_inscription.scss */
+/* line 148, ../sass/_inscription.scss */
 #inscription form .group label {
   color: #ffffff;
   font-size: 18px;
@@ -533,19 +534,19 @@ body {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 159, ../sass/_inscription.scss */
+/* line 160, ../sass/_inscription.scss */
 #inscription form .group input:focus ~ label, #inscription form .group input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #62D4DF;
 }
-/* line 164, ../sass/_inscription.scss */
+/* line 165, ../sass/_inscription.scss */
 #inscription form .group .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 165, ../sass/_inscription.scss */
+/* line 166, ../sass/_inscription.scss */
 #inscription form .group .bar:before, #inscription form .group .bar:after {
   content: '';
   height: 2px;
@@ -557,35 +558,35 @@ body {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 176, ../sass/_inscription.scss */
+/* line 177, ../sass/_inscription.scss */
 #inscription form .group .bar:before {
   left: 50%;
 }
-/* line 179, ../sass/_inscription.scss */
+/* line 180, ../sass/_inscription.scss */
 #inscription form .group .bar:after {
   right: 50%;
 }
-/* line 182, ../sass/_inscription.scss */
+/* line 183, ../sass/_inscription.scss */
 #inscription form .group input:focus ~ .bar:before, #inscription form .group input:focus ~ .bar:after {
   width: 50%;
 }
-/* line 186, ../sass/_inscription.scss */
+/* line 187, ../sass/_inscription.scss */
 #inscription form .group input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-/* line 192, ../sass/_inscription.scss */
+/* line 193, ../sass/_inscription.scss */
 #inscription form button {
   border: none;
   background-color: #62D4DF;
   border-radius: 5px;
 }
-/* line 196, ../sass/_inscription.scss */
+/* line 197, ../sass/_inscription.scss */
 #inscription form button img {
   padding: 5px 10px 0 10px;
 }
-/* line 202, ../sass/_inscription.scss */
+/* line 203, ../sass/_inscription.scss */
 #inscription .small-link {
   font-size: 12px;
   color: white;
