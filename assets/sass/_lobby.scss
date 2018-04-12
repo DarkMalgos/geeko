@@ -1,0 +1,55 @@
+#lobby {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .def {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    .couv {
+      height: 200px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .word {
+      text-decoration: none;
+      span {
+        margin-left: 10px;
+        &:first-child {
+          display: block;
+          margin-top: 10px;
+          color: #62D4DF;
+          font-size: 12px;
+        }
+        &:last-child {
+          color: black;
+        }
+      }
+
+    }
+    .choice {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+      div {
+        height: 50px;
+        width: 50px;
+        background-color: #62D4DF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 70%;
+        }
+      }
+
+    }
+  }
+}

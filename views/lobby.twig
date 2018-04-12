@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+{% block header %}
+    {% include 'header.twig' %}
+{% endblock %}
+
+{% block body %}
+    <section id="lobby">
+        <div class="def">
+            <img class="couv" src="/img/pokeball.jpg" alt="">
+            <div>
+                <a href="/definition" class="word">
+                    <span>Pokemon</span>
+                    <span>Pokeball</span>
+                </a>
+                <div class="choice">
+                    <div>
+                        <img src="/img/check.png" alt="">
+                    </div>
+                    <div>
+                        <img src="/img/cross.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+    <script src="/js/index.js"></script>
+{% endblock %}

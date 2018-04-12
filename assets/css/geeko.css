@@ -70,7 +70,7 @@ body {
   content: '';
   position: absolute;
   top: 300%;
-  width: 50%;
+  width: 75%;
   height: 3px;
   background-color: #62D4DF;
 }
@@ -79,7 +79,7 @@ body {
   content: '';
   position: absolute;
   top: 600%;
-  width: 25%;
+  width: 50%;
   height: 3px;
   background-color: #62D4DF;
 }
@@ -836,4 +836,68 @@ body {
 #definition .bloc-sym button img {
   padding: 0 5px 0 10px;
   transform: rotate(90deg);
+}
+
+/* line 1, ../sass/_lobby.scss */
+#lobby {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+/* line 5, ../sass/_lobby.scss */
+#lobby .def {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+}
+/* line 12, ../sass/_lobby.scss */
+#lobby .def .couv {
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* line 17, ../sass/_lobby.scss */
+#lobby .def .word {
+  text-decoration: none;
+}
+/* line 19, ../sass/_lobby.scss */
+#lobby .def .word span {
+  margin-left: 10px;
+}
+/* line 21, ../sass/_lobby.scss */
+#lobby .def .word span:first-child {
+  display: block;
+  margin-top: 10px;
+  color: #62D4DF;
+  font-size: 12px;
+}
+/* line 27, ../sass/_lobby.scss */
+#lobby .def .word span:last-child {
+  color: black;
+}
+/* line 33, ../sass/_lobby.scss */
+#lobby .def .choice {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* line 40, ../sass/_lobby.scss */
+#lobby .def .choice div {
+  height: 50px;
+  width: 50px;
+  background-color: #62D4DF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 48, ../sass/_lobby.scss */
+#lobby .def .choice div img {
+  width: 70%;
 }
