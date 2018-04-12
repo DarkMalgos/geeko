@@ -37,11 +37,10 @@ body {
 
 /* line 1, ../sass/_header.scss */
 #menu {
-  height: 10vh;
   width: calc(100% - 4vw);
   position: relative;
 }
-/* line 5, ../sass/_header.scss */
+/* line 4, ../sass/_header.scss */
 #menu .burger {
   height: 50%;
   width: 13vw;
@@ -59,14 +58,14 @@ body {
     }
   }*/
 }
-/* line 13, ../sass/_header.scss */
+/* line 12, ../sass/_header.scss */
 #menu .burger .bar {
   width: 100%;
   height: 3px;
   background-color: #62D4DF;
   position: relative;
 }
-/* line 18, ../sass/_header.scss */
+/* line 17, ../sass/_header.scss */
 #menu .burger .bar:before {
   content: '';
   position: absolute;
@@ -75,7 +74,7 @@ body {
   height: 3px;
   background-color: #62D4DF;
 }
-/* line 26, ../sass/_header.scss */
+/* line 25, ../sass/_header.scss */
 #menu .burger .bar:after {
   content: '';
   position: absolute;
@@ -84,11 +83,11 @@ body {
   height: 3px;
   background-color: #62D4DF;
 }
-/* line 35, ../sass/_header.scss */
+/* line 34, ../sass/_header.scss */
 #menu .burger .active {
   visibility: hidden;
 }
-/* line 37, ../sass/_header.scss */
+/* line 36, ../sass/_header.scss */
 #menu .burger .active:before {
   content: '';
   position: absolute;
@@ -99,7 +98,7 @@ body {
   visibility: visible;
   top: 300%;
 }
-/* line 47, ../sass/_header.scss */
+/* line 46, ../sass/_header.scss */
 #menu .burger .active:after {
   content: '';
   position: absolute;
@@ -110,7 +109,7 @@ body {
   visibility: visible;
   top: 300%;
 }
-/* line 68, ../sass/_header.scss */
+/* line 67, ../sass/_header.scss */
 #menu nav {
   display: none;
   position: absolute;
@@ -119,7 +118,7 @@ body {
   height: 100vh;
   justify-content: center;
 }
-/* line 75, ../sass/_header.scss */
+/* line 74, ../sass/_header.scss */
 #menu nav ul {
   height: 100%;
   display: flex;
@@ -127,11 +126,11 @@ body {
   align-items: center;
   list-style: none;
 }
-/* line 82, ../sass/_header.scss */
+/* line 81, ../sass/_header.scss */
 #menu nav ul li:not(:last-child) {
   margin-bottom: 30px;
 }
-/* line 85, ../sass/_header.scss */
+/* line 84, ../sass/_header.scss */
 #menu nav ul li a {
   text-decoration: none;
   color: white;
@@ -349,7 +348,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 /* line 8, ../sass/_inscription.scss */
 #inscription header {
@@ -619,4 +618,222 @@ body {
     width: 0;
     background: transparent;
   }
+}
+/* line 1, ../sass/_profil.scss */
+#profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+/* line 7, ../sass/_profil.scss */
+#profil .profil-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* line 12, ../sass/_profil.scss */
+#profil .profil-head img {
+  width: 100px;
+  margin-right: 10px;
+}
+/* line 16, ../sass/_profil.scss */
+#profil .profil-head div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 20, ../sass/_profil.scss */
+#profil .profil-head div p:first-child {
+  color: #62D4DF;
+  font-size: 13px;
+}
+/* line 24, ../sass/_profil.scss */
+#profil .profil-head div p:last-child {
+  color: white;
+  font-size: 20px;
+}
+/* line 30, ../sass/_profil.scss */
+#profil .profil-infos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* line 34, ../sass/_profil.scss */
+#profil .profil-infos p {
+  font-size: 20px;
+}
+/* line 36, ../sass/_profil.scss */
+#profil .profil-infos p:first-child {
+  color: #62D4DF;
+  margin-right: 10px;
+}
+/* line 40, ../sass/_profil.scss */
+#profil .profil-infos p:last-child {
+  color: white;
+}
+/* line 46, ../sass/_profil.scss */
+#profil .definition-bloc {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+/* line 52, ../sass/_profil.scss */
+#profil .definition-bloc header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* line 59, ../sass/_profil.scss */
+#profil .definition-bloc header span {
+  color: white;
+  opacity: .5;
+}
+/* line 62, ../sass/_profil.scss */
+#profil .definition-bloc header span.active {
+  opacity: 1;
+  border-bottom: 1px solid #62D4DF;
+}
+/* line 68, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 74, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* line 79, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .row .definition {
+  width: 45%;
+  height: 80px;
+  position: relative;
+}
+/* line 83, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .row .definition img {
+  width: 100%;
+}
+/* line 86, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .row .definition p {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: 12px;
+  color: #62D4DF;
+}
+/* line 92, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .row .definition p:last-child {
+  top: 10px;
+  color: white;
+  font-size: 15px;
+}
+/* line 101, ../sass/_profil.scss */
+#profil .definition-bloc button {
+  width: 25%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #62D4DF;
+}
+/* line 107, ../sass/_profil.scss */
+#profil .definition-bloc button img {
+  padding: 0 5px 0 10px;
+  transform: rotate(90deg);
+}
+
+/* line 1, ../sass/_definition.scss */
+#definition {
+  display: flex;
+  flex-direction: column;
+}
+/* line 4, ../sass/_definition.scss */
+#definition .couv {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* line 11, ../sass/_definition.scss */
+#definition .word {
+  margin-top: 110px;
+  margin-bottom: 10px;
+}
+/* line 14, ../sass/_definition.scss */
+#definition .word p:first-child {
+  color: #62D4DF;
+  font-size: 12px;
+}
+/* line 18, ../sass/_definition.scss */
+#definition .word p:last-child {
+  color: white;
+}
+/* line 22, ../sass/_definition.scss */
+#definition article {
+  color: white;
+  font-size: 15px;
+}
+/* line 27, ../sass/_definition.scss */
+#definition .bloc-sym {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 34, ../sass/_definition.scss */
+#definition .bloc-sym .row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* line 39, ../sass/_definition.scss */
+#definition .bloc-sym .row .definition {
+  width: 45%;
+  height: 80px;
+  position: relative;
+}
+/* line 43, ../sass/_definition.scss */
+#definition .bloc-sym .row .definition img {
+  width: 100%;
+}
+/* line 46, ../sass/_definition.scss */
+#definition .bloc-sym .row .definition p {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: 12px;
+  color: #62D4DF;
+}
+/* line 52, ../sass/_definition.scss */
+#definition .bloc-sym .row .definition p:last-child {
+  top: 10px;
+  color: white;
+  font-size: 15px;
+}
+/* line 60, ../sass/_definition.scss */
+#definition .bloc-sym button {
+  width: 25%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #62D4DF;
+}
+/* line 66, ../sass/_definition.scss */
+#definition .bloc-sym button img {
+  padding: 0 5px 0 10px;
+  transform: rotate(90deg);
 }

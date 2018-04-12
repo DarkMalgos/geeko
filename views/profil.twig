@@ -1,0 +1,77 @@
+{% extends 'layout.twig' %}
+{% block header %}
+    {% include 'header.twig' %}
+{% endblock %}
+
+{% block body %}
+    <section id="profil">
+        <header class="profil-head">
+            <img src="/img/yoda.jpg" alt="">
+            <div>
+                <p>Maitre</p>
+                <p>Yoda</p>
+            </div>
+        </header>
+        <div class="profil-infos">
+            <p>Nom :</p>
+            <p>Yoda</p>
+        </div>
+        <div class="profil-infos">
+            <p>Prénom :</p>
+            <p>Yoda</p>
+        </div>
+        <div class="profil-infos">
+            <p>Email :</p>
+            <p>Yoda@jedi.com</p>
+        </div>
+        <div class="definition-bloc">
+            <header>
+                <span id="val" class="active">Définitions validées</span>
+                <span id="unval">Définitions non validées</span>
+            </header>
+            <div class="definition-cont">
+                <div class="row">
+                    <div class="definition">
+                        <img src="/img/starfighter.jpg" alt="">
+                        <p>Star-wars</p>
+                        <p>Starfighter</p>
+                    </div>
+                    <div class="definition">
+                        <img src="/img/starfighter.jpg" alt="">
+                        <p>Star-wars</p>
+                        <p>Starfighter</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="definition">
+                        <img src="/img/starfighter.jpg" alt="">
+                        <p>Star-wars</p>
+                        <p>Starfighter</p>
+                    </div>
+                    <div class="definition">
+                        <img src="/img/starfighter.jpg" alt="">
+                        <p>Star-wars</p>
+                        <p>Starfighter</p>
+                    </div>
+                </div>
+            </div>
+            <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
+        </div>
+    </section>
+{% endblock %}
+{% block javascript %}
+    <script>
+        document.querySelector('#val').addEventListener('click', function () {
+            if (this.getAttribute('class') == 'active')
+                return
+            document.querySelector('#unval').classList.remove('active')
+            this.classList.add('active')
+        })
+        document.querySelector('#unval').addEventListener('click', function () {
+            if (this.getAttribute('class') == 'active')
+                return
+            document.querySelector('#val').classList.remove('active')
+            this.classList.add('active')
+        })
+    </script>
+{% endblock %}

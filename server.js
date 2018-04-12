@@ -52,5 +52,13 @@ app.get('/add', function (req, res) {
     res.render('add.twig')
 })
 
+app.get('/definition', function (req, res) {
+    res.render('definition.twig')
+})
+
+app.get('/lobby', function (req, res) {
+    res.render('lobby.twig')
+})
+
 server.listen(port);
 console.log("application live on port " + port);
