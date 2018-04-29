@@ -1,6 +1,7 @@
 const express =     require('express')
 const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
+const multer =      require('multer');
 const Twig =        require('twig')
 const bcrypt =      require('bcrypt')
 const session =     require('express-session')
@@ -14,7 +15,7 @@ var users = null;
 var port = 1337;
 
 /* ROAD TO ASSETS DIRECTORY */
-app.use(session({ secret: 'this-is-a-secret-token'}))
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 14 * 24 * 3600000 }}))
 app.use('/css', express.static('assets/css'));
 app.use('/js', express.static('assets/js'));
 app.use('/img', express.static('assets/img'));
@@ -35,14 +36,27 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+var Storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, "./assets/img");
+    },
+    filename: function (req, file, callback) {
+        callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+    }
+});
+
+var upload = multer({ storage: Storage }).array("file", 3); //Field name and max count
+
 app.set('views',  __dirname + '/views')
 
 app.get('/', function (req, res) {
+    var user = null
     if (req.session.someAttribute != undefined) {
-        let sessData = req.session
-        sessData.someAttribute = undefined;
+        user = req.session.someAttribute
     }
-    res.render('index.twig')
+    res.render('index.twig', {
+        user: user
+    })
 })
 
 app.get('/inscription', function (req, res) {
@@ -50,7 +64,6 @@ app.get('/inscription', function (req, res) {
 })
 
 app.post('/inscription', function (req, res) {
-    console.log(req.body)
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connexion();
     co.connect();
@@ -60,15 +73,22 @@ app.post('/inscription', function (req, res) {
             console.log('email deja existant')
             res.redirect('/');//cet email est deja existant
         } else {
-            var hash = bcrypt.hashSync(req.body.password, 10);
-            let q = "insert into users (`lastname`, `firstname`, `pseudo`, `email`, `password`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.pseudo + "', '" + req.body.email + "', '" + hash + "')";
-            co.query(q, function (error, results, fields) {
-                if (error) return console.log(error);
-                var sessData = req.session;
-                console.log(results.insertId)
-                sessData.someAttribute = results.insertId;
-                res.redirect("/profil");
-            })
+            upload(req, res, function (err) {
+                console.log(req.files[0].path)
+                let file = req.files[0].path.split('\\')
+                if (err) {
+                    return err;
+                }
+                var hash = bcrypt.hashSync(req.body.password, 10);
+                let q = "insert into users (`lastname`, `firstname`, `pseudo`, `picture_path`, `email`, `password`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.pseudo + "', '" + file[2] + "', '" + req.body.email + "', '" + hash + "')";
+                co.query(q, function (error, results, fields) {
+                    if (error) return console.log(error);
+                    var sessData = req.session;
+                    console.log(results.insertId)
+                    sessData.someAttribute = results.insertId;
+                    res.redirect("/profil");
+                })
+            });
         }
     })
 })

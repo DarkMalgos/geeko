@@ -9,7 +9,7 @@
             <a href="/connexion">Connexion</a>
             <a href="#">Inscription</a>
         </header>
-        <form method="post">
+        <form enctype="multipart/form-data" method="post">
             <div class="parent-group">
                 <div class="group2">
                     <input type="text" name="lastname" required>
@@ -32,7 +32,7 @@
                     <label>Pseudo</label>
                 </div>
                 <div class="group3">
-                    <input type="file" name="file" id="file" class="inputfile" />
+                    <input type="file" name="file" id="file" class="inputfile" multiple/>
                     <label for="file"></label>
                     <p>choisi ta photo de profil</p>
                 </div>
