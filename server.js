@@ -59,6 +59,20 @@ app.get('/', function (req, res) {
     })
 })
 
+app.get('/autocomplete', function (req, res) {
+    console.log(req.query.q)
+    let co = connexion()
+    co.connect()
+    co.query("SELECT * FROM definitions WHERE name LIKE '" + req.query.q + "%'", function (error, results, fields) {
+        if (error) return console.error(error)
+        if (results.length > 0) {
+            res.send({words: results})
+        } else {
+            res.send({words: false})
+        }
+    })
+})
+
 app.get('/inscription', function (req, res) {
     res.render('inscription.twig')
 })
