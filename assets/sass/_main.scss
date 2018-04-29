@@ -20,6 +20,7 @@ body {
 
 .container {
   width: 80vw;
+  height: calc(100vh - 20px);
   margin: 0 auto;
   margin-top: 20px;
   display: flex;

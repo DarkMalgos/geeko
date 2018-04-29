@@ -28,6 +28,7 @@ body {
 /* line 21, ../sass/_main.scss */
 .container {
   width: 80vw;
+  height: calc(100vh - 20px);
   margin: 0 auto;
   margin-top: 20px;
   display: flex;
@@ -139,14 +140,13 @@ body {
 /* line 1, ../sass/_index.scss */
 #index {
   width: 100%;
-  height: 100vh;
-  margin-top: 10%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/* line 9, ../sass/_index.scss */
+/* line 8, ../sass/_index.scss */
 #index .firstLabel {
   border-right: .1em solid white;
   margin: 2em 1em;
@@ -157,13 +157,13 @@ body {
   -webkit-animation: typing 3s steps(21, end), blink-caret 0.5s step-end infinite alternate;
   color: white;
 }
-/* line 20, ../sass/_index.scss */
+/* line 19, ../sass/_index.scss */
 #index .small {
   color: #62D4DF;
   -webkit-animation: none;
   font-size: 15px;
 }
-/* line 25, ../sass/_index.scss */
+/* line 24, ../sass/_index.scss */
 #index input {
   display: none;
   background: transparent;
@@ -188,7 +188,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 90vh;
+  height: 100%;
   width: 100%;
 }
 /* line 8, ../sass/_connexion.scss */
@@ -349,7 +349,7 @@ body {
   align-items: flex-start;
   width: 100%;
   margin-bottom: 20px;
-  height: 100vh;
+  height: 100%;
 }
 /* line 9, ../sass/_inscription.scss */
 #inscription header {
@@ -627,7 +627,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 /* line 8, ../sass/_profil.scss */
 #profil .profil-head {
@@ -758,7 +758,7 @@ body {
 #definition {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 /* line 5, ../sass/_definition.scss */
 #definition .couv {
@@ -845,9 +845,10 @@ body {
 #lobby {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  top: 25%;
 }
-/* line 5, ../sass/_lobby.scss */
+/* line 6, ../sass/_lobby.scss */
 #lobby .def {
   position: absolute;
   width: 100%;
@@ -856,32 +857,32 @@ body {
   background-color: white;
   border-radius: 5px;
 }
-/* line 12, ../sass/_lobby.scss */
+/* line 13, ../sass/_lobby.scss */
 #lobby .def .couv {
   height: 200px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* line 17, ../sass/_lobby.scss */
+/* line 18, ../sass/_lobby.scss */
 #lobby .def .word {
   text-decoration: none;
 }
-/* line 19, ../sass/_lobby.scss */
+/* line 20, ../sass/_lobby.scss */
 #lobby .def .word span {
   margin-left: 10px;
 }
-/* line 21, ../sass/_lobby.scss */
+/* line 22, ../sass/_lobby.scss */
 #lobby .def .word span:first-child {
   display: block;
   margin-top: 10px;
   color: #62D4DF;
   font-size: 12px;
 }
-/* line 27, ../sass/_lobby.scss */
+/* line 28, ../sass/_lobby.scss */
 #lobby .def .word span:last-child {
   color: black;
 }
-/* line 33, ../sass/_lobby.scss */
+/* line 34, ../sass/_lobby.scss */
 #lobby .def .choice {
   margin-top: 20px;
   width: 100%;
@@ -890,7 +891,7 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
-/* line 40, ../sass/_lobby.scss */
+/* line 41, ../sass/_lobby.scss */
 #lobby .def .choice div {
   height: 50px;
   width: 50px;
@@ -900,7 +901,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* line 48, ../sass/_lobby.scss */
+/* line 49, ../sass/_lobby.scss */
 #lobby .def .choice div img {
   width: 70%;
 }
