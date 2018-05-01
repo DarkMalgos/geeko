@@ -12,7 +12,7 @@ const server = require('http').createServer(app);
 var users = null;
 
 /* variable globales */
-var port = 1337;
+var port = 8080;
 
 /* ROAD TO ASSETS DIRECTORY */
 app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 14 * 24 * 3600000 }}))
