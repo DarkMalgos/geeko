@@ -5,29 +5,11 @@
 
 {% block body %}
     <section id="definition">
-        <img class="couv" src="/img/starfighter.jpg" alt="">
+        <img class="couv" src="/img/{{ word.picture }}" alt="">
         <div class="word">
-            <p>Star-wars</p>
-            <p>Starfighter</p>
+            <p>{{ word.title }}</p>
+            <p>{{ word.name }}</p>
         </div>
-        <article>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim hic modi nemo perferendis quae unde!
-            At beatae commodi cumque, deserunt exercitationem laborum optio sunt ullam. Ab eaque explicabo incidunt?
-        </article>
-        <div class="bloc-sym">
-            <div class="row">
-                <div class="definition">
-                    <img src="/img/starfighter.jpg" alt="">
-                    <p>Star-wars</p>
-                    <p>Starfighter</p>
-                </div>
-                <div class="definition">
-                    <img src="/img/starfighter.jpg" alt="">
-                    <p>Star-wars</p>
-                    <p>Starfighter</p>
-                </div>
-            </div>
-            <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
-        </div>
+        <article>{{ word.definition }}</article>
     </section>
 {% endblock %}

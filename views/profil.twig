@@ -6,23 +6,23 @@
 {% block body %}
     <section id="profil">
         <header class="profil-head">
-            <img src="/img/yoda.jpg" alt="">
+            <img src="/img/{{ user.picture_path }}" alt="">
             <div>
                 <p>Maitre</p>
-                <p>Yoda</p>
+                <p>{{ user.pseudo }}</p>
             </div>
         </header>
         <div class="profil-infos">
             <p>Nom :</p>
-            <p>Yoda</p>
+            <p>{{ user.lastname }}</p>
         </div>
         <div class="profil-infos">
             <p>Prénom :</p>
-            <p>Yoda</p>
+            <p>{{ user.firstname }}</p>
         </div>
         <div class="profil-infos">
             <p>Email :</p>
-            <p>Yoda@jedi.com</p>
+            <p>{{ user.email }}</p>
         </div>
         <div class="definition-bloc">
             <header>
@@ -30,30 +30,13 @@
                 <span id="unval">Définitions non validées</span>
             </header>
             <div class="definition-cont">
-                <div class="row">
-                    <div class="definition">
-                        <img src="/img/starfighter.jpg" alt="">
-                        <p>Star-wars</p>
-                        <p>Starfighter</p>
-                    </div>
-                    <div class="definition">
-                        <img src="/img/starfighter.jpg" alt="">
-                        <p>Star-wars</p>
-                        <p>Starfighter</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="definition">
-                        <img src="/img/starfighter.jpg" alt="">
-                        <p>Star-wars</p>
-                        <p>Starfighter</p>
-                    </div>
-                    <div class="definition">
-                        <img src="/img/starfighter.jpg" alt="">
-                        <p>Star-wars</p>
-                        <p>Starfighter</p>
-                    </div>
-                </div>
+                {% for definition in definitions %}
+                    <a href="/definition?q={{ definition.id }}" class="definition">
+                        <img src="/img/{{ definition.picture }}" alt="">
+                        <p>{{ definition.title }}</p>
+                        <p>{{ definition.name }}</p>
+                    </a>
+                {% endfor %}
             </div>
             <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
         </div>

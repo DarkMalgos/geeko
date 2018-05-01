@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+{% block header %}
+    {% include 'header.twig' %}
+{% endblock %}
+
+{% block body %}
+    <section id="add">
+        <form enctype="multipart/form-data" method="post">
+            <div class="parent-group">
+                <div class="group3">
+                    <input type="file" name="file" id="file" class="inputfile" multiple required/>
+                    <label for="file"></label>
+                    <p>choisi ta photo de definition</p>
+                </div>
+            </div>
+            <div class="parent-group">
+                <div class="group2">
+                    <input type="text" name="lastname" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Univer</label>
+                </div>
+                <div class="group2">
+                    <input type="text" name="firstname" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Mot</label>
+                </div>
+            </div>
+            <div class="group">
+                <textarea name="definition" required></textarea>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Definition</label>
+            </div>
+            <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
+        </form>
+    </section>
+{% endblock %}

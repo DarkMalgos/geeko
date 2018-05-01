@@ -33,7 +33,6 @@ body {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 /* line 1, ../sass/_header.scss */
@@ -121,11 +120,11 @@ body {
 }
 /* line 74, ../sass/_header.scss */
 #menu nav ul {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style: none;
+  margin-top: 80px;
 }
 /* line 81, ../sass/_header.scss */
 #menu nav ul li:not(:last-child) {
@@ -135,6 +134,8 @@ body {
 #menu nav ul li a {
   text-decoration: none;
   color: white;
+  font-size: 20px;
+  letter-spacing: 2px;
 }
 
 /* line 1, ../sass/_index.scss */
@@ -154,22 +155,76 @@ body {
   width: 168.104px;
   white-space: nowrap;
   overflow: hidden;
-  -webkit-animation: typing 3s steps(21, end), blink-caret 0.5s step-end infinite alternate;
   color: white;
+  -webkit-animation: typing 3s steps(21, end), blink-caret 0.5s step-end infinite alternate;
 }
 /* line 19, ../sass/_index.scss */
 #index .small {
   color: #62D4DF;
   -webkit-animation: none;
   font-size: 15px;
+  align-self: flex-start;
+  margin-left: 57px;
 }
-/* line 24, ../sass/_index.scss */
+/* line 26, ../sass/_index.scss */
 #index input {
   display: none;
   background: transparent;
   font-size: 20px;
   color: white;
   border-bottom: solid 2px #62D4DF;
+}
+/* line 33, ../sass/_index.scss */
+#index .result-bloc {
+  display: none;
+  width: 184px;
+  height: 315px;
+  text-decoration: none;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;*/
+  background: white;
+  overflow-y: scroll;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/* line 46, ../sass/_index.scss */
+#index .result-bloc .result-item {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+/* line 53, ../sass/_index.scss */
+#index .result-bloc .result-item:last-of-type {
+  margin-bottom: 20px;
+}
+/* line 56, ../sass/_index.scss */
+#index .result-bloc .result-item img {
+  height: 70px;
+  width: 70px;
+}
+/* line 60, ../sass/_index.scss */
+#index .result-bloc .result-item .item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 67, ../sass/_index.scss */
+#index .result-bloc .result-item .item-info .univer {
+  color: #62D4DF;
+  font-size: 15px;
+}
+/* line 71, ../sass/_index.scss */
+#index .result-bloc .result-item .item-info .name {
+  color: black;
+  font-size: 20px;
 }
 
 @-webkit-keyframes typing {
@@ -188,8 +243,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
   width: 100%;
+  margin-top: 45%;
 }
 /* line 8, ../sass/_connexion.scss */
 #connexion header {
@@ -627,7 +682,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
+  margin-top: 15%;
 }
 /* line 8, ../sass/_profil.scss */
 #profil .profil-head {
@@ -708,26 +763,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
-/* line 75, ../sass/_profil.scss */
-#profil .definition-bloc .definition-cont .row {
-  display: flex;
-  justify-content: space-between;
+/* line 76, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .definition {
   width: 100%;
-  margin-bottom: 10px;
-}
-/* line 80, ../sass/_profil.scss */
-#profil .definition-bloc .definition-cont .row .definition {
-  width: 45%;
-  height: 80px;
+  height: auto;
   position: relative;
+  margin-top: 20px;
+}
+/* line 81, ../sass/_profil.scss */
+#profil .definition-bloc .definition-cont .definition:last-of-type {
+  margin-bottom: 20px;
 }
 /* line 84, ../sass/_profil.scss */
-#profil .definition-bloc .definition-cont .row .definition img {
+#profil .definition-bloc .definition-cont .definition img {
   width: 100%;
 }
 /* line 87, ../sass/_profil.scss */
-#profil .definition-bloc .definition-cont .row .definition p {
+#profil .definition-bloc .definition-cont .definition p {
   position: absolute;
   top: 0;
   left: 5px;
@@ -735,12 +789,12 @@ body {
   color: #62D4DF;
 }
 /* line 93, ../sass/_profil.scss */
-#profil .definition-bloc .definition-cont .row .definition p:last-child {
+#profil .definition-bloc .definition-cont .definition p:last-child {
   top: 10px;
   color: white;
   font-size: 15px;
 }
-/* line 102, ../sass/_profil.scss */
+/* line 101, ../sass/_profil.scss */
 #profil .definition-bloc button {
   width: 25%;
   border-radius: 5px;
@@ -748,7 +802,7 @@ body {
   border: none;
   background-color: #62D4DF;
 }
-/* line 108, ../sass/_profil.scss */
+/* line 107, ../sass/_profil.scss */
 #profil .definition-bloc button img {
   padding: 0 5px 0 10px;
   transform: rotate(90deg);
@@ -770,75 +824,23 @@ body {
 }
 /* line 12, ../sass/_definition.scss */
 #definition .word {
-  margin-top: 110px;
+  margin-top: 200px;
   margin-bottom: 10px;
 }
 /* line 15, ../sass/_definition.scss */
 #definition .word p:first-child {
   color: #62D4DF;
-  font-size: 12px;
+  font-size: 15px;
 }
 /* line 19, ../sass/_definition.scss */
 #definition .word p:last-child {
   color: white;
+  font-size: 20px;
 }
-/* line 23, ../sass/_definition.scss */
+/* line 24, ../sass/_definition.scss */
 #definition article {
   color: white;
   font-size: 15px;
-}
-/* line 28, ../sass/_definition.scss */
-#definition .bloc-sym {
-  margin-top: 10px;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-/* line 35, ../sass/_definition.scss */
-#definition .bloc-sym .row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 10px;
-}
-/* line 40, ../sass/_definition.scss */
-#definition .bloc-sym .row .definition {
-  width: 45%;
-  height: 80px;
-  position: relative;
-}
-/* line 44, ../sass/_definition.scss */
-#definition .bloc-sym .row .definition img {
-  width: 100%;
-}
-/* line 47, ../sass/_definition.scss */
-#definition .bloc-sym .row .definition p {
-  position: absolute;
-  top: 0;
-  left: 5px;
-  font-size: 12px;
-  color: #62D4DF;
-}
-/* line 53, ../sass/_definition.scss */
-#definition .bloc-sym .row .definition p:last-child {
-  top: 10px;
-  color: white;
-  font-size: 15px;
-}
-/* line 61, ../sass/_definition.scss */
-#definition .bloc-sym button {
-  width: 25%;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  border: none;
-  background-color: #62D4DF;
-}
-/* line 67, ../sass/_definition.scss */
-#definition .bloc-sym button img {
-  padding: 0 5px 0 10px;
-  transform: rotate(90deg);
 }
 
 /* line 1, ../sass/_lobby.scss */

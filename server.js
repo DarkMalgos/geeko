@@ -50,22 +50,22 @@ var upload = multer({ storage: Storage }).array("file", 3); //Field name and max
 app.set('views',  __dirname + '/views')
 
 app.get('/', function (req, res) {
-    var user = null
-    if (req.session.someAttribute != undefined) {
-        user = req.session.someAttribute
+    if (req.session.someAttribute) {
+        res.render('index.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.render('index.twig')
     }
-    res.render('index.twig', {
-        user: user
-    })
 })
 
 app.get('/autocomplete', function (req, res) {
-    console.log(req.query.q)
     let co = connexion()
     co.connect()
-    co.query("SELECT * FROM definitions WHERE name LIKE '" + req.query.q + "%'", function (error, results, fields) {
+    co.query(`SELECT d.*, u.title FROM definitions d INNER JOIN univers u ON u.id=d.univers WHERE d.name LIKE '${req.query.q}%'`, function (error, results, fields) {
         if (error) return console.error(error)
         if (results.length > 0) {
+            console.log(results)
             res.send({words: results})
         } else {
             res.send({words: false})
@@ -74,7 +74,13 @@ app.get('/autocomplete', function (req, res) {
 })
 
 app.get('/inscription', function (req, res) {
-    res.render('inscription.twig')
+    if (req.session.someAttribute) {
+        res.render('inscription.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.render('inscription.twig')
+    }
 })
 
 app.post('/inscription', function (req, res) {
@@ -88,7 +94,6 @@ app.post('/inscription', function (req, res) {
             res.redirect('/');//cet email est deja existant
         } else {
             upload(req, res, function (err) {
-                console.log(req.files[0].path)
                 let file = req.files[0].path.split('\\')
                 if (err) {
                     return err;
@@ -98,7 +103,6 @@ app.post('/inscription', function (req, res) {
                 co.query(q, function (error, results, fields) {
                     if (error) return console.log(error);
                     var sessData = req.session;
-                    console.log(results.insertId)
                     sessData.someAttribute = results.insertId;
                     res.redirect("/profil");
                 })
@@ -108,11 +112,16 @@ app.post('/inscription', function (req, res) {
 })
 
 app.get('/connexion', function (req, res) {
-    res.render('connexion.twig')
+    if (req.session.someAttribute) {
+        res.render('connexion.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.render('connexion.twig')
+    }
 })
 
 app.post('/connexion', function (req, res) {
-    console.log('connexion', JSON.stringify(req.body))
     let co = connexion();
     co.connect();
     co.query("select * from users where pseudo like '" + req.body.pseudo + "';", function (error, results, fields) {
@@ -134,23 +143,78 @@ app.post('/connexion', function (req, res) {
 })
 
 app.get('/profil', function (req, res) {
-    res.render('profil.twig')
+    if (!req.session.someAttribute){
+        res.redirect('/connexion')
+    }
+    let co = connexion();
+    co.connect();
+    co.query(`SELECT u.* FROM users u WHERE u.id=${req.session.someAttribute}`, function (error, results, fields) {
+        if (error) return console.error(error)
+        if (results.length > 0) {
+            user = results[0]
+            co.query(`SELECT d.*, u.title FROM definitions d INNER JOIN univers u ON u.id=d.univers WHERE d.author=${req.session.someAttribute}`, function (error, results, fields) {
+                if (error) return console.error(error)
+                if (results.length > 0) {
+                    console.log(results)
+                    res.render('profil.twig', {
+                        user: user,
+                        definitions: results
+                    })
+                }
+            })
+        }
+    })
 })
 
 app.get('/validate', function (req, res) {
-    res.render('validate.twig')
+    if (req.session.someAttribute) {
+        res.render('validate.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.redirect('connexion')
+    }
 })
 
 app.get('/add', function (req, res) {
-    res.render('add.twig')
+    if (req.session.someAttribute) {
+        res.render('add.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.redirect('connexion')
+    }
 })
 
 app.get('/definition', function (req, res) {
-    res.render('definition.twig')
+    let co = connexion()
+    co.connect()
+    co.query(`SELECT d.*, u.title FROM definitions d INNER JOIN univers u ON u.id=d.univers WHERE d.id=${req.query.q}`, function (error, results, fields) {
+        if (error) return console.error(error)
+        if (results.length > 0) {
+            if (req.session.someAttribute) {
+                res.render('definition.twig', {
+                    word: results[0],
+                    user: req.session.someAttribute
+                })
+            } else {
+                res.render('definition.twig', {
+                    word: results[0]
+                })
+            }
+        }
+    })
+
 })
 
 app.get('/lobby', function (req, res) {
-    res.render('lobby.twig')
+    if (req.session.someAttribute) {
+        res.render('lobby.twig', {
+            user: req.session.someAttribute
+        })
+    } else {
+        res.redirect('connexion')
+    }
 })
 
 server.listen(port);

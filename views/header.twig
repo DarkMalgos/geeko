@@ -6,9 +6,13 @@
     <nav>
         <ul>
             <li><a href="/">Accueil</a></li>
-            <li><a href="/lobby">Définition in lobby</a></li>
-            <li><a href="/add">Ajouter une définition</a></li>
-            <li><a href="/connexion">Connexion/Inscription</a></li>
+            {% if user %}
+                <li><a href="/lobby">Définition in lobby</a></li>
+                <li><a href="/add">Ajouter une définition</a></li>
+                <li><a href="/profil">Profil</a></li>
+            {% else %}
+                <li><a href="/connexion">Connexion/Inscription</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

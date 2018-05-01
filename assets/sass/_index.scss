@@ -12,14 +12,16 @@
     width: 168.104px;
     white-space: nowrap;
     overflow: hidden;
+    color: white;
     -webkit-animation: typing 3s steps(21, end),
     blink-caret .5s step-end infinite alternate;
-    color: white;
   }
   .small {
     color: #62D4DF;
     -webkit-animation: none;
     font-size: 15px;
+    align-self: flex-start;
+    margin-left: 57px;
   }
   input {
     display: none;
@@ -28,7 +30,61 @@
     color: white;
     border-bottom: solid 2px #62D4DF;
   }
+  .result-bloc {
+    display: none;
+    width: 184px;
+    height: 315px;
+    text-decoration: none;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;*/
+    background: white;
+    overflow-y: scroll;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    .result-item {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+      img {
+        height: 70px;
+        width: 70px;
+      }
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        .univer {
+          color: #62D4DF;
+          font-size: 15px;
+        }
+        .name {
+          color: black;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
 
-@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
