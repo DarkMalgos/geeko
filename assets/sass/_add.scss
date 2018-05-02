@@ -1,0 +1,324 @@
+#add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 15%;
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    a {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      &:last-child {
+        border-bottom: 1px solid #62D4DF;
+      }
+      &:not(:last-child) {
+        opacity: .5;
+      }
+    }
+  }
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h1 {
+      color: white;
+      border-bottom: solid 1px #62D4DF;
+      margin-bottom: 40px;
+      font-weight: normal;
+    }
+    .parent-group {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      .group3 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        input[type='file'] {
+          width: 0.1px;
+          height: 0.1px;
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+          z-index: -1;
+        }
+        label {
+          background-color: #62D4DF;
+          width: 45%;
+          height: 50px;
+          border-radius: 5px;
+          img {
+            height: 80%;
+            margin-top: 3.5%;
+            margin-left: 20%;
+          }
+        }
+        input[type='file'] + label {
+          cursor: pointer; /* "hand" cursor */
+        }
+        #info-file {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 10px;
+          height: 100%;
+          p {
+            align-self: flex-start;
+            font-size: 15px;
+            color: #62D4DF;
+          }
+          span {
+            font-size: 20px;
+            color: #b5b9c5;
+          }
+        }
+      }
+      .group2 {
+        width: 40%;
+        position:relative;
+        margin-bottom:45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+          color: white;
+          font-size:18px;
+          padding:10px 10px 10px 5px;
+          display:block;
+          width: 100%;
+          border:none;
+          border-bottom:1px solid #ffffff;
+          background: none;
+          &:focus {
+            outline:none;
+            border: none;
+          }
+        }
+        label {
+          color:#ffffff;
+          font-size:18px;
+          font-weight:normal;
+          position:absolute;
+          pointer-events:none;
+          left:5px;
+          top:10px;
+          transition:0.2s ease all;
+          -moz-transition:0.2s ease all;
+          -webkit-transition:0.2s ease all;
+        }
+        input:focus ~ label, input:valid ~ label {
+          top:-20px;
+          font-size:14px;
+          color: #62D4DF;
+        }
+        .bar 	{ position:relative; display:block; width:300px; }
+        .bar:before, .bar:after 	{
+          content:'';
+          height:2px;
+          width:0;
+          bottom:1px;
+          position:absolute;
+          background: #62D4DF;
+          transition:0.2s ease all;
+          -moz-transition:0.2s ease all;
+          -webkit-transition:0.2s ease all;
+        }
+        .bar:before {
+          left:50%;
+        }
+        .bar:after {
+          right:50%;
+        }
+        input:focus ~ .bar:before, input:focus ~ .bar:after {
+          width: 20%;
+        }
+
+        input:focus ~ .highlight {
+          -webkit-animation:inputHighlighter 0.3s ease;
+          -moz-animation:inputHighlighter 0.3s ease;
+          animation:inputHighlighter 0.3s ease;
+        }
+      }
+    }
+    .group {
+      position:relative;
+      margin-bottom:45px;
+      input {
+        color: white;
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width: 100%;
+        border:none;
+        border-bottom:1px solid #ffffff;
+        background: none;
+        &:focus {
+          outline:none;
+          border: none;
+        }
+      }
+      label {
+        color:#ffffff;
+        font-size:18px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        transition:0.2s ease all;
+        -moz-transition:0.2s ease all;
+        -webkit-transition:0.2s ease all;
+      }
+      input:focus ~ label, input:valid ~ label {
+        top:-20px;
+        font-size:14px;
+        color: #62D4DF;
+      }
+      .bar 	{ position:relative; display:block; width:300px; }
+      .bar:before, .bar:after 	{
+        content:'';
+        height:2px;
+        width:0;
+        bottom:1px;
+        position:absolute;
+        background: #62D4DF;
+        transition:0.2s ease all;
+        -moz-transition:0.2s ease all;
+        -webkit-transition:0.2s ease all;
+      }
+      .bar:before {
+        left:50%;
+      }
+      .bar:after {
+        right:50%;
+      }
+      input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:50%;
+      }
+
+      input:focus ~ .highlight {
+        -webkit-animation:inputHighlighter 0.3s ease;
+        -moz-animation:inputHighlighter 0.3s ease;
+        animation:inputHighlighter 0.3s ease;
+      }
+    }
+    .group-def {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      label {
+        color:#ffffff;
+        font-size:18px;
+        font-weight:normal;
+      }
+      textarea {
+        background: none;
+        border: solid 1px white;
+        border-radius: 5px;
+        color: white;
+        height: 200px;
+        width: 80vw;
+        &:focus {
+          border-color: #62D4DF;
+        }
+      }
+    }
+
+    .custom-dropdown__select{
+      font-size: inherit; /* inherit size from .custom-dropdown */
+      padding: .5em; /* add some space*/
+      margin: 0; /* remove default margins */
+      &--blue {
+        background-color: #62D4DF;
+        color: white;
+      }
+    }
+    @supports (pointer-events: none) and
+	  ((-webkit-appearance: none) or
+	  (-moz-appearance: none) or
+	  (appearance: none)) {
+      .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        &__select {
+          padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
+          border: 0;
+          border-radius: 3px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          pointer-events: none;
+        }
+        &::after {
+          content: "\25BC";
+          height: 1em;
+          font-size: .625em;
+          line-height: 1;
+          right: 1.2em;
+          top: 50%; margin-top: -.5em;
+        }
+        &::before { /*  Custom dropdown arrow cover */
+          width: 2em;
+          right: 0; top: 0; bottom: 0;
+          border-radius: 0 3px 3px 0;
+        }
+        &--blue::before {
+          background-color: #62D4DF;
+          border-left: 1px solid #62D4DF;
+        }
+        &--blue::after {
+          color: white;
+        }
+      }
+      @-moz-document url-prefix() {
+        .custom-dropdown__select 			 { padding-right: .9em }
+        .custom-dropdown--large .custom-dropdown__select { padding-right: 1.3em }
+        .custom-dropdown--small .custom-dropdown__select { padding-right: .5em }
+      }
+    }
+    button {
+      border: none;
+      background-color: #62D4DF;
+      border-radius: 5px;
+      img {
+        padding: 5px 10px 0 10px;
+      }
+    }
+  }
+
+  .small-link {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  @-webkit-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+}

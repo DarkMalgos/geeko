@@ -907,3 +907,414 @@ body {
 #lobby .def .choice div img {
   width: 70%;
 }
+
+/* line 1, ../sass/_add.scss */
+#add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 15%;
+}
+/* line 8, ../sass/_add.scss */
+#add header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* line 14, ../sass/_add.scss */
+#add header a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+/* line 18, ../sass/_add.scss */
+#add header a:last-child {
+  border-bottom: 1px solid #62D4DF;
+}
+/* line 21, ../sass/_add.scss */
+#add header a:not(:last-child) {
+  opacity: .5;
+}
+/* line 26, ../sass/_add.scss */
+#add form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 32, ../sass/_add.scss */
+#add form h1 {
+  color: white;
+  border-bottom: solid 1px #62D4DF;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+/* line 38, ../sass/_add.scss */
+#add form .parent-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 42, ../sass/_add.scss */
+#add form .parent-group .group3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* line 47, ../sass/_add.scss */
+#add form .parent-group .group3 input[type='file'] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+/* line 55, ../sass/_add.scss */
+#add form .parent-group .group3 label {
+  background-color: #62D4DF;
+  width: 45%;
+  height: 50px;
+  border-radius: 5px;
+}
+/* line 60, ../sass/_add.scss */
+#add form .parent-group .group3 label img {
+  height: 80%;
+  margin-top: 3.5%;
+  margin-left: 20%;
+}
+/* line 66, ../sass/_add.scss */
+#add form .parent-group .group3 input[type='file'] + label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
+/* line 69, ../sass/_add.scss */
+#add form .parent-group .group3 #info-file {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  height: 100%;
+}
+/* line 75, ../sass/_add.scss */
+#add form .parent-group .group3 #info-file p {
+  align-self: flex-start;
+  font-size: 15px;
+  color: #62D4DF;
+}
+/* line 80, ../sass/_add.scss */
+#add form .parent-group .group3 #info-file span {
+  font-size: 20px;
+  color: #b5b9c5;
+}
+/* line 86, ../sass/_add.scss */
+#add form .parent-group .group2 {
+  width: 40%;
+  position: relative;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 93, ../sass/_add.scss */
+#add form .parent-group .group2 input {
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: none;
+}
+/* line 102, ../sass/_add.scss */
+#add form .parent-group .group2 input:focus {
+  outline: none;
+  border: none;
+}
+/* line 107, ../sass/_add.scss */
+#add form .parent-group .group2 label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 119, ../sass/_add.scss */
+#add form .parent-group .group2 input:focus ~ label, #add form .parent-group .group2 input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #62D4DF;
+}
+/* line 124, ../sass/_add.scss */
+#add form .parent-group .group2 .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 125, ../sass/_add.scss */
+#add form .parent-group .group2 .bar:before, #add form .parent-group .group2 .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #62D4DF;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 136, ../sass/_add.scss */
+#add form .parent-group .group2 .bar:before {
+  left: 50%;
+}
+/* line 139, ../sass/_add.scss */
+#add form .parent-group .group2 .bar:after {
+  right: 50%;
+}
+/* line 142, ../sass/_add.scss */
+#add form .parent-group .group2 input:focus ~ .bar:before, #add form .parent-group .group2 input:focus ~ .bar:after {
+  width: 20%;
+}
+/* line 146, ../sass/_add.scss */
+#add form .parent-group .group2 input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+/* line 153, ../sass/_add.scss */
+#add form .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+/* line 156, ../sass/_add.scss */
+#add form .group input {
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: none;
+}
+/* line 165, ../sass/_add.scss */
+#add form .group input:focus {
+  outline: none;
+  border: none;
+}
+/* line 170, ../sass/_add.scss */
+#add form .group label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 182, ../sass/_add.scss */
+#add form .group input:focus ~ label, #add form .group input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #62D4DF;
+}
+/* line 187, ../sass/_add.scss */
+#add form .group .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 188, ../sass/_add.scss */
+#add form .group .bar:before, #add form .group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #62D4DF;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 199, ../sass/_add.scss */
+#add form .group .bar:before {
+  left: 50%;
+}
+/* line 202, ../sass/_add.scss */
+#add form .group .bar:after {
+  right: 50%;
+}
+/* line 205, ../sass/_add.scss */
+#add form .group input:focus ~ .bar:before, #add form .group input:focus ~ .bar:after {
+  width: 50%;
+}
+/* line 209, ../sass/_add.scss */
+#add form .group input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+/* line 215, ../sass/_add.scss */
+#add form .group-def {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+/* line 219, ../sass/_add.scss */
+#add form .group-def label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+}
+/* line 224, ../sass/_add.scss */
+#add form .group-def textarea {
+  background: none;
+  border: solid 1px white;
+  border-radius: 5px;
+  color: white;
+  height: 200px;
+  width: 80vw;
+}
+/* line 231, ../sass/_add.scss */
+#add form .group-def textarea:focus {
+  border-color: #62D4DF;
+}
+/* line 237, ../sass/_add.scss */
+#add form .custom-dropdown__select {
+  font-size: inherit;
+  /* inherit size from .custom-dropdown */
+  padding: .5em;
+  /* add some space*/
+  margin: 0;
+  /* remove default margins */
+}
+/* line 241, ../sass/_add.scss */
+#add form .custom-dropdown__select--blue {
+  background-color: #62D4DF;
+  color: white;
+}
+@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+  /* line 250, ../sass/_add.scss */
+  #add form .custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 254, ../sass/_add.scss */
+  #add form .custom-dropdown__select {
+    padding-right: 2.5em;
+    /* accommodate with the pseudo elements for the dropdown arrow */
+    border: 0;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  /* line 262, ../sass/_add.scss */
+  #add form .custom-dropdown::before, #add form .custom-dropdown::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+  /* line 268, ../sass/_add.scss */
+  #add form .custom-dropdown::after {
+    content: "\25BC";
+    height: 1em;
+    font-size: .625em;
+    line-height: 1;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -.5em;
+  }
+  /* line 276, ../sass/_add.scss */
+  #add form .custom-dropdown::before {
+    /*  Custom dropdown arrow cover */
+    width: 1em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+  }
+  /* line 281, ../sass/_add.scss */
+  #add form .custom-dropdown--blue::before {
+    background-color: #62D4DF;
+    border-left: 1px solid #62D4DF;
+  }
+  /* line 285, ../sass/_add.scss */
+  #add form .custom-dropdown--blue::after {
+    color: white;
+  }
+  @-moz-document url-prefix() {
+    /* line 290, ../sass/_add.scss */
+    #add form .custom-dropdown__select {
+      padding-right: 0.9em;
+    }
+    /* line 291, ../sass/_add.scss */
+    #add form .custom-dropdown--large .custom-dropdown__select {
+      padding-right: 1.3em;
+    }
+    /* line 292, ../sass/_add.scss */
+    #add form .custom-dropdown--small .custom-dropdown__select {
+      padding-right: 0.5em;
+    }
+  }
+}
+/* line 295, ../sass/_add.scss */
+#add form button {
+  border: none;
+  background-color: #62D4DF;
+  border-radius: 5px;
+}
+/* line 299, ../sass/_add.scss */
+#add form button img {
+  padding: 5px 10px 0 10px;
+}
+/* line 305, ../sass/_add.scss */
+#add .small-link {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
