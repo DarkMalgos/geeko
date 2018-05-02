@@ -203,8 +203,7 @@ app.post('/add', function (req, res) {
         }
         let co = connexion()
         co.connect()
-        co.query('SELECT')
-        co.query(`INSERT INTO lobby(picture, univers, name, definition, author) VALUES ('${file[2]}', )`, function (error, results, fields) {
+        co.query(`INSERT INTO lobby(picture, univers, name, definition, author) VALUES ('${file[2]}', ${req.body.univer}, '${req.body.name}', "${req.body.definition}", ${req.session.someAttribute})`, function (error, results, fields) {
             if (error) return console.error(error)
             res.render('add.twig', {
                 user: req.session.someAttribute

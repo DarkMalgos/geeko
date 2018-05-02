@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="custom-dropdown custom-dropdown--blue">
-                <select class="custom-dropdown__select custom-dropdown__select--blue" name="univers" required>
+                <select class="custom-dropdown__select custom-dropdown__select--blue" name="univer" required>
                     <option value="null">Choisissez l'univers de votre mot</option>
                     {% for univer in univers %}
                         <option value="{{ univer.id }}">{{ univer.title }}</option>
@@ -27,7 +27,7 @@
                 </select>
             </div>
             <div class="group">
-                <input type="text" name="firstname" required>
+                <input type="text" name="name" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Mot</label>
@@ -39,4 +39,7 @@
             <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
         </form>
     </section>
+{% endblock %}
+{% block javascript %}
+<script src="/js/add.js"></script>
 {% endblock %}
