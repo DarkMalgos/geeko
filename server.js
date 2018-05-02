@@ -177,13 +177,40 @@ app.get('/validate', function (req, res) {
 })
 
 app.get('/add', function (req, res) {
-    if (req.session.someAttribute) {
-        res.render('add.twig', {
-            user: req.session.someAttribute
+    let co = connexion()
+    co.connect()
+    co.query(`SELECT * FROM univers`, function (error, results, fields) {
+        if (error) return console.error(error)
+        if (results.length > 0) {
+            if (req.session.someAttribute) {
+                res.render('add.twig', {
+                    user: req.session.someAttribute,
+                    univers: results
+                })
+            } else {
+                res.redirect('connexion')
+            }
+        }
+    })
+
+})
+
+app.post('/add', function (req, res) {
+    upload(req, res, function (err) {
+        let file = req.files[0].path.split('\\')
+        if (err) {
+            return err;
+        }
+        let co = connexion()
+        co.connect()
+        co.query('SELECT')
+        co.query(`INSERT INTO lobby(picture, univers, name, definition, author) VALUES ('${file[2]}', )`, function (error, results, fields) {
+            if (error) return console.error(error)
+            res.render('add.twig', {
+                user: req.session.someAttribute
+            })
         })
-    } else {
-        res.redirect('connexion')
-    }
+    })
 })
 
 app.get('/definition', function (req, res) {

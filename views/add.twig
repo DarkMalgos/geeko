@@ -6,32 +6,35 @@
 {% block body %}
     <section id="add">
         <form enctype="multipart/form-data" method="post">
+            <h1>Ajouter une définition</h1>
             <div class="parent-group">
                 <div class="group3">
                     <input type="file" name="file" id="file" class="inputfile" multiple required/>
-                    <label for="file"></label>
-                    <p>choisi ta photo de definition</p>
+                    <label for="file">
+                        <img src="/img/image.png" alt="">
+                    </label>
+                    <div id="info-file">
+                        <p>choisi ta photo de definition</p>
+                    </div>
                 </div>
             </div>
-            <div class="parent-group">
-                <div class="group2">
-                    <input type="text" name="lastname" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Univer</label>
-                </div>
-                <div class="group2">
-                    <input type="text" name="firstname" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Mot</label>
-                </div>
+            <div class="custom-dropdown custom-dropdown--blue">
+                <select class="custom-dropdown__select custom-dropdown__select--blue" name="univers" required>
+                    <option value="null">Choisissez l'univers de votre mot</option>
+                    {% for univer in univers %}
+                        <option value="{{ univer.id }}">{{ univer.title }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="group">
-                <textarea name="definition" required></textarea>
+                <input type="text" name="firstname" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
+                <label>Mot</label>
+                </div>
+            <div class="group-def">
                 <label>Definition</label>
+                <textarea name="definition" required></textarea>
             </div>
             <button type="submit"><img src="/img/arrow.png" alt="flèche"></button>
         </form>

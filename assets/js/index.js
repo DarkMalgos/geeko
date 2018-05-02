@@ -6,9 +6,7 @@ document.querySelector('label').addEventListener('click', function () {
 
 var httpRequest = new XMLHttpRequest()
 document.querySelector('#search').addEventListener('change', function () {
-    if (this.value.length < 3 || this.value === '')
-        return
-    console.log(this.value)
+    if (this.value.length < 3 || this.value === '') return
     httpRequest.onreadystatechange = function(){
         if (httpRequest.readyState === 4) {
             words = JSON.parse(this.response).words
