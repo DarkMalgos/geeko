@@ -43,7 +43,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         input[type='file'] {
           width: 0.1px;
           height: 0.1px;
@@ -153,6 +153,7 @@
     .group {
       position:relative;
       margin-bottom:45px;
+      margin-top: 30px;
       input {
         color: white;
         font-size:18px;
@@ -238,6 +239,7 @@
       font-size: inherit; /* inherit size from .custom-dropdown */
       padding: .5em; /* add some space*/
       margin: 0; /* remove default margins */
+      width: 100%;
       &--blue {
         background-color: #62D4DF;
         color: white;
@@ -251,6 +253,7 @@
         position: relative;
         display: inline-block;
         vertical-align: middle;
+        width: 100%;
         &__select {
           padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
           border: 0;
