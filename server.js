@@ -152,17 +152,29 @@ app.get('/profil', function (req, res) {
         if (error) return console.error(error)
         if (results.length > 0) {
             user = results[0]
-            co.query(`SELECT d.*, u.title FROM definitions d INNER JOIN univers u ON u.id=d.univers WHERE d.author=${req.session.someAttribute}`, function (error, results, fields) {
+        }
+        co.query(`SELECT d.*, u.title FROM definitions d INNER JOIN univers u ON u.id=d.univers WHERE d.author=${req.session.someAttribute}`, function (error, results, fields) {
+            if (error) return console.error(error)
+            if (results.length > 0) {
+                console.log(results)
+                definition = results
+            }
+            co.query(`SELECT l.*, u.title FROM lobby l INNER JOIN univers u ON u.id=l.univers WHERE l.author=${req.session.someAttribute}`, function (error, results, fields) {
                 if (error) return console.error(error)
                 if (results.length > 0) {
-                    console.log(results)
                     res.render('profil.twig', {
                         user: user,
-                        definitions: results
+                        definitions: definition,
+                        lobbys: results
+                    })
+                } else {
+                    res.render('profil.twig', {
+                        user: user,
+                        definitions: definition
                     })
                 }
             })
-        }
+        })
     })
 })
 
@@ -212,6 +224,43 @@ app.post('/add', function (req, res) {
     })
 })
 
+app.put('/add', function (req, res) {
+    console.log('toto')
+    let co=connexion()
+    co.connect()
+    co.query(`SELECT * FROM lobby WHERE id=${req.query.q}`, function (error, results, fields) {
+        if (error) return console.error(error)
+        if (results.length > 0) {
+            word = results[0]
+            if (req.query.c == 'check') {
+                if ((word.vote + 1) >= 3) {
+                    co.query(`DELETE FROM lobby WHERE id=${req.query.q}`, function (error, results, fields) {
+                        if (error) return console.error(error)
+                        if (results.length > 0) {
+                            co.query(`INSERT INTO definitions(picture, univers, name, definition, author) VALUES ('${word.picture}',${word.univers}, '${word.name}', "${word.definition}", ${word.author})`, function (error, results, fields) {
+                                if (error) return console.error(error)
+                                res.send('done')
+                            })
+                        }
+                    })
+                } else {
+                    co.query(`UPDATE lobby SET vote=${word.vote + 1} WHERE id=${word.id}`, function (error, results, fields) {
+                        if (error) return console.error(error)
+                        res.send('done')
+                    })
+                }
+            } else {
+                co.query(`UPDATE lobby SET vote=${word.vote - 1} WHERE id=${word.id}`, function (error, results, fields) {
+                    if (error) return console.error(error)
+                    res.send('done')
+                })
+            }
+        } else {
+            res.send('done')
+        }
+    })
+})
+
 app.get('/definition', function (req, res) {
     let co = connexion()
     co.connect()
@@ -235,8 +284,16 @@ app.get('/definition', function (req, res) {
 
 app.get('/lobby', function (req, res) {
     if (req.session.someAttribute) {
-        res.render('lobby.twig', {
-            user: req.session.someAttribute
+        let co = connexion()
+        co.connect()
+        co.query(`SELECT l.*, u.title FROM lobby l INNER JOIN univers u ON u.id=l.univers WHERE l.author!=${req.session.someAttribute}`, function (error, results, fields) {
+            if (error) return console.error(error)
+            if (results.length > 0) {
+                res.render('lobby.twig', {
+                    user: req.session.someAttribute,
+                    lobbys: results
+                })
+            }
         })
     } else {
         res.redirect('connexion')

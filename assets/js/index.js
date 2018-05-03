@@ -5,7 +5,7 @@ document.querySelector('label').addEventListener('click', function () {
 })
 
 var httpRequest = new XMLHttpRequest()
-document.querySelector('#search').addEventListener('change', function () {
+document.querySelector('#search').addEventListener('keydown', function () {
     if (this.value.length < 3 || this.value === '') return
     httpRequest.onreadystatechange = function(){
         if (httpRequest.readyState === 4) {

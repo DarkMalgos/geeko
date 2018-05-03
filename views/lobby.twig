@@ -5,25 +5,58 @@
 
 {% block body %}
     <section id="lobby">
-        <div class="def">
-            <img class="couv" src="/img/pokeball.jpg" alt="">
-            <div>
-                <a href="/definition" class="word">
-                    <span>Pokemon</span>
-                    <span>Pokeball</span>
-                </a>
-                <div class="choice">
-                    <div>
-                        <img src="/img/check.png" alt="">
-                    </div>
-                    <div>
-                        <img src="/img/cross.png" alt="">
+        {% for lobby in lobbys %}
+            <div class="def">
+                <img class="couv" src="/img/{{ lobby.picture }}" alt="">
+                <div>
+                    <a href="/definition?q={{ lobby.id }}" class="word">
+                        <span>{{ lobby.title }}</span>
+                        <span>{{ lobby.name }}</span>
+                    </a>
+                    <div class="choice">
+                        <div class="check" value={{ lobby.id }}>
+                            <img src="/img/check.png" alt="">
+                        </div>
+                        <div class="cross" value={{ lobby.id }}>
+                            <img src="/img/cross.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </section>
 {% endblock %}
 {% block javascript %}
-    <script src="/js/index.js"></script>
+<script>
+    let httpRequest = new XMLHttpRequest(),
+    check = document.querySelectorAll('.check'),
+    cross = document.querySelectorAll('.cross')
+    for(let i=0; i<check.length; i++) {
+        check[i].addEventListener('click', function () {
+            let vote = this
+            console.log(vote.getAttribute('value'))
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === 4) {
+                    vote.parentNode.parentNode.parentNode.style.display = 'none'
+                }
+            }
+            httpRequest.open('put', '/add?q=' + vote.getAttribute('value')+'&c=check', true)
+            httpRequest.send()
+        })
+    }
+
+for (let i = 0; i < cross.length; i++) {
+    cross[i].addEventListener('click', function () {
+        let vote = this
+        console.log(vote.getAttribute('value'))
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4) {
+                vote.parentNode.parentNode.parentNode.style.display = 'none'
+            }
+        }
+        httpRequest.open('put', '/add?q=' + vote.getAttribute('value') + '&c=cross', true)
+        httpRequest.send()
+    })
+}
+</script>
 {% endblock %}

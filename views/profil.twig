@@ -31,10 +31,17 @@
             </header>
             <div class="definition-cont">
                 {% for definition in definitions %}
-                    <a href="/definition?q={{ definition.id }}" class="definition">
-                        <img src="/img/{{ definition.picture }}" alt="">
-                        <p>{{ definition.title }}</p>
-                        <p>{{ definition.name }}</p>
+                <a href="/definition?q={{ definition.id }}" class="definition">
+                    <img src="/img/{{ definition.picture }}" alt="">
+                    <p>{{ definition.title }}</p>
+                    <p>{{ definition.name }}</p>
+                </a>
+                {% endfor %}
+                {% for lobby in lobbys %}
+                    <a href="/definition?q={{ lobby.id }}" class="definition hidden">
+                        <img src="/img/{{ lobby.picture }}" alt="">
+                        <p>{{ lobby.title }}</p>
+                        <p>{{ lobby.name }}</p>
                     </a>
                 {% endfor %}
             </div>
@@ -49,12 +56,29 @@
                 return
             document.querySelector('#unval').classList.remove('active')
             this.classList.add('active')
+            let all = document.querySelectorAll(".definition")
+            for (def of all) {
+                console.log(def)
+                if (def.getAttribute('class') == 'definition hidden') {
+                    def.classList.remove('hidden')
+                } else {
+                    def.classList.add('hidden')
+                }
+            }
         })
         document.querySelector('#unval').addEventListener('click', function () {
             if (this.getAttribute('class') == 'active')
                 return
             document.querySelector('#val').classList.remove('active')
             this.classList.add('active')
+            let all = document.querySelectorAll(".definition")
+            for (def of all) {
+                if (def.getAttribute('class') == 'definition hidden') {
+                    def.classList.remove('hidden')
+                } else {
+                    def.classList.add('hidden')
+                }
+            }
         })
     </script>
 {% endblock %}
